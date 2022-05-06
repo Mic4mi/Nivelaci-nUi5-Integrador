@@ -1,0 +1,55 @@
+<mvc:View
+    controllerName="acc.orders.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>   
+    <Page id="homePage" showHeader="false">
+        <Table id="idOrdersTable"
+            enableBusyIndicator="true"
+            inset="false"
+            items="{ordersModel>/Orders}">
+            <headerToolbar>
+                <OverflowToolbar id="ovTolTable">                              
+                    <Title id="tableTitle" text="{i18n>title}" level="H2"/>
+                    <ToolbarSpacer id="mainTableTS"/>
+                    <SearchField id="mySearchField" liveChange="onSearchShipName" placeholder="{i18n>ShipName}" width="10rem" showSearchButton="false"/>
+                    <Button id="sortButton" press="onOpenSortPopUp" icon="sap-icon://sort" type="Transparent" tooltip="{i18n>sortTooltip}" />
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column id="col1">
+                    <Text id="tt1" text="{i18n>OrderID}" />
+                </Column>
+                <Column id="col2">
+                    <Text id="tt2" text="{i18n>CustomerID}" />
+                </Column>
+                <Column id="col3">
+                    <Text id="tt3" text="{i18n>OrderDate}" />
+                </Column>
+                <Column id="col4">
+                    <Text id="tt4" text="{i18n>RequiredDate}"/>
+                </Column>
+                <Column id="col5">
+                    <Text id="tt5" text="{i18n>ShipName}"/>
+                </Column>
+                <Column id="col6">
+                    <Text id="tt6" text="{i18n>ShipCountry}" />
+                </Column>                            
+            </columns>
+            <items>
+                <ColumnListItem id="colistTable" vAlign="Middle" type="Navigation" press="onNavigateToDetail">
+                    <cells>
+                        <Text id="content1" text="{ordersModel>OrderID}" />
+                        <Text id="content2" text="{ordersModel>CustomerID}" />
+                        <Text id="content3" text="{ path: 'ordersModel>OrderDate', formatter: '.formatter.formatDate' }"/>
+                        <Text id="content4" text="{ path: 'ordersModel>RequiredDate', formatter: '.formatter.formatDate' }" />
+                        <Text id="content5" text="{ordersModel>ShipName}" />
+                        <Text id="content6" text="{ordersModel>ShipCountry}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>    
+    </Page>
+    
+</mvc:View>

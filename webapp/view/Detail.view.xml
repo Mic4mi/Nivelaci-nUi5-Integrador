@@ -1,0 +1,78 @@
+<mvc:View
+    controllerName="acc.orders.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+>   
+    <Page id="DetailPage" title="{i18n>title}" showNavButton="true" navButtonPress="navBackAndCleanDetailModels">
+        <VBox id="OrderInfo" class="sapUiSmallMargin">
+            <f:SimpleForm id="ordersForm"
+                editable="false"
+                layout="ResponsiveGridLayout"
+                title="{i18n>orderTitle}"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false" >
+                <f:content>
+                    <Label id="lbo1" labelFor="content1" text="{i18n>OrderID}" />
+                    <Text id="orderInfoContent1" text="{orderDetailsModel>/OrderID}" />
+                </f:content>
+            </f:SimpleForm>
+        </VBox>    
+        <VBox id="CustomerInfo" class="sapUiSmallMargin">
+            <f:SimpleForm id="customersForm"
+                editable="false"
+                layout="ResponsiveGridLayout"
+                title="{i18n>customerTitle}"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false" >
+                <f:content>
+                    <Label id="lb1" labelFor="content1" text="{i18n>CustomerID}" />
+                    <Text id="content1" text="{customerDetailsModel>/CustomerID}" />
+                    <Label id="lb2" labelFor="content2" text="{i18n>CompanyName}" />
+                    <Text id="content2" text="{customerDetailsModel>/CompanyName}" />
+                    <Label id="lb3" labelFor="content3" text="{i18n>ContactTitle}" />
+                    <Text id="content3" text="{customerDetailsModel>/ContactTitle}" />
+                    <Label id="lb4" labelFor="content4" text="{i18n>Address}" />
+                    <Text id="content4" text="{customerDetailsModel>/Address}" />
+                    <Label id="lb5" labelFor="content5" text="{i18n>City}" />
+                    <Text id="content5" text="{customerDetailsModel>/City}" />
+                    <Label id="lb6" labelFor="content6" text="{i18n>Region}" />
+                    <Text id="content6" text="{customerDetailsModel>/Region}" />
+                    <Label id="lb7" labelFor="content7" text="{i18n>PostalCode}" />
+                    <Text id="content7" text="{customerDetailsModel>/PostalCode}" />
+                    <Label id="lb8" labelFor="content8" text="{i18n>Country}" />
+                    <Text id="content8" text="{customerDetailsModel>/Country}" />
+                    <Label id="lb9" labelFor="content9" text="{i18n>Phone}" />
+                    <Text id="content9" text="{customerDetailsModel>/Phone}" />
+                    <Label id="lb10" labelFor="content10" text="{i18n>Fax}" />
+                    <Text id="content10" text="{customerDetailsModel>/Fax}" />
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+    </Page>
+    
+</mvc:View>

@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		id="sortDialog"
+		confirm="onSortOrdersConfirm">
+		<sortItems>
+			<ViewSettingsItem
+				id="sortItem1"
+				text="{i18n>OrderID}"
+				key="OrderID"
+                selected="false"/>
+			<ViewSettingsItem
+				id="sortItem2"
+				text="{i18n>CustomerID}"
+				key="CustomerID"
+                selected="true"/>
+			<ViewSettingsItem
+				id="sortItem3"
+				text="{i18n>ShipName}"
+				key="ShipName"
+                selected="false"/> 
+			<ViewSettingsItem
+				id="sortItem4"
+				text="{i18n>ShipCountry}"
+				key="ShipCountry"
+                selected="false"/>   
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>
