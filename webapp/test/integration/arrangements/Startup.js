@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/test/Opa5"
-], function (Opa5) {
+	"sap/ui/test/Opa5",
+	"sap/ui/model/odata/v2/ODataModel"
+], function (Opa5, ODataModel) {
 	"use strict";
 
 	return Opa5.extend("acc.orders.test.integration.arrangements.Startup", {
